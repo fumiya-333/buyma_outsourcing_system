@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP');
+
+@import './mixin/mixin';
+
+@import './setting/config';
+
+@import './module/header';
+
+@import 'vendor/variables';
+
+@import '~bootstrap/scss/bootstrap';
+
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+* {
+	font-family: 游ゴシック体,"游ゴシック Medium","Yu Gothic Medium","游ゴシック体",YuGothic,"ヒラギノ角ゴシック Pro","Hiragino Kaku Gothic Pro",メイリオ,Meiryo,Osaka,"ＭＳ Ｐゴシック","MS PGothic",FontAwesome,sans-serif;
+}
+
+h3, h4 {
+	margin-bottom: 0.8em;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	line-height: 36px;
+}
+
+textarea:focus, input:focus, input[type]:focus {
+  outline: 0;
+	box-shadow: none;
+}
+
+/*
+	コンテナ
+ */
+.container {
+	width: 100%;
+	&:nth-child(2){
+		@include mq(lg) {
+			padding-top: 2em!important;
+			padding-bottom: 2em!important;
+		}
+	}
+}
+
+.small {
+	line-height: $line-height-base;
+}
