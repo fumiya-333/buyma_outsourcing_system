@@ -1,4 +1,5 @@
 *
-!.gitignore
 !display/
 !download/
+!test/
+!.gitignore
