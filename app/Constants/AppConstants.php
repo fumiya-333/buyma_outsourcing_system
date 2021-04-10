@@ -30,7 +30,7 @@ class AppConstants {
 		/** ハッシュ sha256 */
 		const HASH_KEY_SHA256 = 'sha256';
 		/** ストレージのファイルパス（表示用） */
-		const STORAGE_DISPLAY_FILE_PATH = '/storage/display/';
+		const STORAGE_DISPLAY_FILE_PATH = 'storage/display/';
 		/** ストレージのファイルパス（ダウンロード用） */
 		const STORAGE_DOWNLOAD_FILE_PATH = 'public/download/';
 
