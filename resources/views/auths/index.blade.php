@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('auths.default')
 
 @section('title', AppConstants::VIEW_TITLE)
 
@@ -11,30 +11,30 @@
 @endsection
 
 @section('content')
-	@if(session('error'))
-		<div class="alert alert-danger msg m-3 h6" role="alert">
-				{!! session('error') !!}
-		</div>
-	@endif
-	@if($errors->any())
-		<div class="alert alert-danger msg m-3 h6" role="alert">
-				<div class="font-weight-bold mb-3">{{ AppConstants::ERR_MSG_AUTH }}</div>
-				<div class="small">
-					@foreach($errors->all() as $error)
-						@if($loop->last)
-							{{ $error }}
-						@else
-							<p>{{ $error }}</p>
-						@endif
-					@endforeach
-				</div>
-		</div>
-	@endif
-	<div class="container py-4">
+	<div class="container">
 		<div class="contents">
 			<div class="bg-secondary text-white p-3">ログイン</div>
 			<div class="shadow-sm px-3 py-4 mb-5 bg-white rounded">
-				<form method="post" action="{{ url(AppConstants::ROOT_DIR_AUTHS) }}">
+				@if(session('error'))
+					<div class="alert alert-danger msg h6" role="alert">
+							{!! session('error') !!}
+					</div>
+				@endif
+				@if($errors->any())
+					<div class="alert alert-danger msg h6" role="alert">
+							<div class="font-weight-bold mb-3">{{ AppConstants::ERR_MSG_AUTH }}</div>
+							<div class="small">
+								@foreach($errors->all() as $error)
+									@if($loop->last)
+										{{ $error }}
+									@else
+										<p>{{ $error }}</p>
+									@endif
+								@endforeach
+							</div>
+					</div>
+				@endif
+				<form method="post" action="{{ url(AppConstants::KEY_AUTHS) }}">
 					{{ csrf_field() }}
 					<div class="form-group">
 						<label for="email">メールアドレス</label>
@@ -51,7 +51,7 @@
 				</form>
 			</div>
 		</div>
-	</div>
+</div>
 @endsection
 @section('script')
 

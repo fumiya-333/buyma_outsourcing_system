@@ -11,9 +11,9 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/page/studys/detail.js', 'public/js/page/studys')
-    .sass('resources/sass/page/auths/_auths.scss', 'public/css/page/auths')
-    .sass('resources/sass/page/studys/_studys.scss', 'public/css/page/studys')
+mix.js('resources/js/app.js', 'public/js/').vue({ version: 2 })
+    .sass('resources/sass/views/auths/_auths.scss', 'public/css/views/auths')
+    .sass('resources/sass/views/tops/_tops.scss', 'public/css/views/tops')
     .sass('resources/sass/_style.scss', 'public/css');
 
 
