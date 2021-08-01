@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('auths.default')
 
 @section('title', AppConstants::VIEW_TITLE)
 

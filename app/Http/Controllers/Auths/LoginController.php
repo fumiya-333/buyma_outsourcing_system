@@ -12,7 +12,7 @@ use Redirect;
 use Auth;
 use App\Requests\Auths\LoginRequest;
 use App\Models\User;
-use App\Http\Controllers\Studys\StudyListController;
+use App\Http\Controllers\Managements\TopController;
 
 /**
  * ログイン用コントローラー
@@ -42,7 +42,7 @@ class LoginController extends Controller
     public function login(LoginRequest $request){
 
         if(Auth::attempt([User::COLUMN_EMAIL => $request->email, User::COLUMN_PASSWORD => $request->password])){
-            return redirect()->action([StudyListController::class, 'show']);
+            return redirect()->action([TopController::class, 'show']);
         }else{
             return Redirect::back()->with('error', self::ERR_MSG)->withInput();
         }

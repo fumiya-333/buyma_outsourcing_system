@@ -16169,6 +16169,19 @@ textarea:focus, input:focus, input[type]:focus {
   }
 }
 
+.main {
+  position: relative;
+}
+
+.sidebar {
+  width: 310px;
+  position: absolute;
+}
+
+.right-view {
+  margin-left: 310px;
+}
+
 .small {
   line-height: 1.6;
 }
